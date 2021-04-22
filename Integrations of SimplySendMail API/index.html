@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sending Mail - SimplySendMail EndPoint</title>
+</head>
+<body>
+	<style type="text/css">
+		form{
+			display: flex;
+			flex-direction: column;
+			width: 70%;
+			padding: 4% 1%;
+			margin-bottom: 1%;
+		}
+	</style>
+	<form method="POST" enctype="multipart/form-data" action="http://127.0.0.1:8000/">
+		<label for="form_name">Form Name: </label>
+		<input type="text" name="form_name" required>
+
+		<label for="form_subject">Form Subject</label>
+		<input type="text" name="form_subject" required>
+
+		<textarea placeholder="Type message" required></textarea>
+
+		<label for="form_email">Form Email : </label>
+		<input type="email" name="form_email" required>
+
+		<input type="file" name="attachment">
+
+
+		<div style="display: none">
+			<input type="email" name="sender_email" value="testingsender@gmail.com">
+			<input type="email" name="recipient_email" value="testingreceiver@gmail.com">
+		</div>
+
+		<button type="submit">Send</button>
+	</form>
+</body>
+</html>

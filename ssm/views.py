@@ -28,9 +28,10 @@ def index(request):
 
 		if serializer.is_valid():
 			serializer.save()
+			print(serializer.data)
 			# SENDING MAIL
 			# Getting the newly created message
-			new_message = serializer.data[0]
+			new_message = serializer.data
 			# Getting all the fields
 			form_name 		= new_message['form_name']
 			form_subject	= new_message['form_subject']
@@ -39,7 +40,7 @@ def index(request):
 			sender_email 	= new_message['sender_email']
 			recipient_email = new_message['recipient_email']
 			attachment 		= new_message['attachment']
-			date_sent 		= date_sent['date_sent']
+			date_sent 		= new_message['date_sent']
 
 			# Equating Form fields to the send_mail
 			subject 		= form_subject
