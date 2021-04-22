@@ -1,3 +1,3 @@
-web: gunicorn BetPrediction.wsgi
+web: gunicorn simplysendmail.wsgi
 
 
