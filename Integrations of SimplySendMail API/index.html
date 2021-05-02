@@ -14,7 +14,10 @@
 		}
 	</style>
 	<!-- enctype="multipart/form-data" -->
-	<form onsubmit="ssmPOST();" method="POST">
+	<form onsubmit="ssmPOST();">
+		
+		<span id='message'></span>
+
 		<label for="form_name">Form Name: </label>
 		<input type="text" id="form_name" >
 
@@ -26,10 +29,10 @@
 		<label for="form_email">Form Email : </label>
 		<input type="email" id="form_email" >
 
-		<input type="file" id="attachment">
+		<input type="file" id="attachment" multiple>
 
 
-		<button type="submit">Send</button>
+		<button name="Submit">Send</button>
 	</form>
 
 	<script src="script.js"></script>
