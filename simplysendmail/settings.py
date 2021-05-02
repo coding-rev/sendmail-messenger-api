@@ -16,7 +16,7 @@ SECRET_KEY = os.path.join('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,13 +42,25 @@ REST_FRAMEWORK = {
          ],
 }
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True # If this is used then `CORS_ORIGIN_WHITELIST` will not have any effect
+CORS_ALLOW_CREDENTIALS = True
 
-CORS_ORIGIN_WHITELIST = ('http://*', 'https://*')
+# CORS_ORIGIN_WHITELIST = [
+#     'http://localhost:3030',
+# ] 
+
+CORS_ORIGIN_REGEX_WHITELIST = [
+    'http://*',
+    'https://*'
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
