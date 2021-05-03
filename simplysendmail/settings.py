@@ -1,5 +1,7 @@
 #simplysendmail/settings.py
 import os
+import django_heroku
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,6 +33,7 @@ INSTALLED_APPS = [
     'ssm',
     'rest_framework',
     'corsheaders',
+    'storages',
 ]
 
 # Rest Framework Permissions
@@ -150,3 +153,6 @@ STATIC_URL      = '/static/'
 
 MEDIA_ROOT      = os.path.join(BASE_DIR, 'media')
 MEDIA_URL       = '/media/'
+
+
+django_heroku.settings(locals())
