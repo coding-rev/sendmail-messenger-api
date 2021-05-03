@@ -14,9 +14,9 @@ SECRET_KEY = os.path.join('SECRET_KEY')
 # SECRET_KEY = '_f7*m%l4w$=3&xuv-isj)%fz6qp1doqs672$2ia3(9mm85bs86'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['simplysendmail.herokuapp.com', '*']
 
 
 # Application definition
