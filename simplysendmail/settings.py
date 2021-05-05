@@ -13,7 +13,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.path.join('SECRET_KEY')
-# SECRET_KEY = '_f7*m%l4w$=3&xuv-isj)%fz6qp1doqs672$2ia3(9mm85bs86'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -93,15 +92,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'simplysendmail.wsgi.application'
 
 #Email for forget password
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # during development only
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # during development only
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "cridadgh@gmail.com"
-EMAIL_HOST_PASSWORD = "mlma thef wfti iguk"
-# DEFAULT_FROM_EMAIL = 'SimplySendMail Support Team <noreply@example.com>'
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -156,7 +149,7 @@ MEDIA_ROOT      = os.path.join(BASE_DIR, 'media')
 MEDIA_URL       = '/media/'
 
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
-db_from_env=dj_database_url.config(conn_max_age=600)
-DATABASES["default"].update(db_from_env)
+# db_from_env=dj_database_url.config(conn_max_age=600)
+# DATABASES["default"].update(db_from_env)

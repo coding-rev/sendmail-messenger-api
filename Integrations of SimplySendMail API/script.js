@@ -1,12 +1,3 @@
-// ===============================
-//Fetching from an API (GET)
-// ==============================
-// function ssmGET(){
-// fetch('https://simplysendmail.herokuapp.com')
-// 	.then(results => results.json())
-// 	.then(console.table)
-// }
-// ssmGET();
 
 // ================================
 // Sending to an API (POST)
@@ -30,11 +21,10 @@ function ssmPOST(){
         "form_message": form_message_val,
         "form_email": form_email_val,
         "sender_email": sender_email_val,
-        "recipient_email": recipient_email_val,
-        // "attachment": attachment_file
+        "recipient_email": recipient_email_val
     }
-    
-	fetch('https://simplysendmail.herokuapp.com', {
+    // "attachment": attachment_file
+    fetch('https://simplysendmail.herokuapp.com', {
 	  method: "POST",
 	  body: JSON.stringify(_data),
 	  headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -47,3 +37,12 @@ function ssmPOST(){
 	
 }
 
+
+// ===============================
+//Fetching from an API (GET)
+// ==============================
+// function ssmGET(){
+// fetch('https://simplysendmail.herokuapp.com')
+// 	.then(results => results.json())
+// 	.then(console.table)
+// }

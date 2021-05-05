@@ -27,7 +27,6 @@ def index(request):
 	elif request.method =="POST":
 		serializer = MailFieldsSerializer(data=request.data)
 		
-
 		if serializer.is_valid():
 			serializer.save()
 			
