@@ -34,7 +34,7 @@ function ssmPOST(){
         // "attachment": attachment_file
     }
     
-	fetch('http://127.0.0.1:8000/', {
+	fetch('http://simplysendmail.herokuapp.com', {
 	  method: "POST",
 	  body: JSON.stringify(_data),
 	  headers: {"Content-type": "application/json; charset=UTF-8"}
