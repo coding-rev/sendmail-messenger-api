@@ -2,11 +2,11 @@
 //Fetching from an API (GET)
 // ==============================
 // function ssmGET(){
-// fetch('http://127.0.0.1:8000/')
+// fetch('https://simplysendmail.herokuapp.com')
 // 	.then(results => results.json())
 // 	.then(console.table)
 // }
-
+// ssmGET();
 
 // ================================
 // Sending to an API (POST)
@@ -34,7 +34,7 @@ function ssmPOST(){
         // "attachment": attachment_file
     }
     
-	fetch('http://simplysendmail.herokuapp.com', {
+	fetch('https://simplysendmail.herokuapp.com', {
 	  method: "POST",
 	  body: JSON.stringify(_data),
 	  headers: {"Content-type": "application/json; charset=UTF-8"}
