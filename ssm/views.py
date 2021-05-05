@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.conf import settings
 # API Function Based Imports
 from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
@@ -28,7 +29,7 @@ def index(request):
 
 		if serializer.is_valid():
 			serializer.save()
-			print(serializer.data)
+			
 			# SENDING MAIL
 			# Getting the newly created message
 			new_message = serializer.data
@@ -45,7 +46,7 @@ def index(request):
 			# Equating Form fields to the send_mail
 			subject 		= form_subject
 			message 		= form_message
-			email_from 		= send_mail
+			email_from 		= settings.EMAIL_HOST_USER
 			recipient_list 	= [recipient_email]
 			
 			send_mail(subject, message, email_from, recipient_list, fail_silently=True)

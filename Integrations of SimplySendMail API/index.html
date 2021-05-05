@@ -14,7 +14,7 @@
 		}
 	</style>
 	<!-- enctype="multipart/form-data" -->
-	<form onsubmit="ssmPOST();">
+	<form method="POST">
 		
 		<span id='message'></span>
 
@@ -32,7 +32,7 @@
 		<input type="file" id="attachment" multiple>
 
 
-		<button name="Submit">Send</button>
+		<button onclick="ssmPOST();" type="submit">Send</button>
 	</form>
 
 	<script src="script.js"></script>

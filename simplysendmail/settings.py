@@ -18,7 +18,7 @@ SECRET_KEY = os.path.join('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['simplysendmail.herokuapp.com', '*']
+ALLOWED_HOSTS = ['simplysendmail.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -40,9 +40,10 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
     
-     'DEFAULT_PERMISSION_CLASSES': [
-         'rest_framework.permissions.AllowAny',
-         ],
+     'DEFAULT_AUTHENTICATION_CLASSES': [ 
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        ],
 }
 
 CORS_ORIGIN_ALLOW_ALL = True # If this is used then `CORS_ORIGIN_WHITELIST` will not have any effect
@@ -52,10 +53,10 @@ CORS_ALLOW_CREDENTIALS = True
 #     'http://localhost:3030',
 # ] 
 
-CORS_ORIGIN_REGEX_WHITELIST = [
-    'http://*',
-    'https://*'
-]
+# CORS_ORIGIN_REGEX_WHITELIST = [
+#     'http://*',
+#     'https://*'
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -92,14 +93,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'simplysendmail.wsgi.application'
 
 #Email for forget password
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # during development only
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # during development only
 
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-# EMAIL_HOST = "smtp.gmail.com"
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = "simplysendmail@gmail.com"
-# EMAIL_HOST_PASSWORD = os.environ.get("SIMPLY_SEND_MAIL_PASSWORD")
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "cridadgh@gmail.com"
+EMAIL_HOST_PASSWORD = "Cridad+1234"
 # DEFAULT_FROM_EMAIL = 'SimplySendMail Support Team <noreply@example.com>'
 
 # Database
@@ -155,4 +156,4 @@ MEDIA_ROOT      = os.path.join(BASE_DIR, 'media')
 MEDIA_URL       = '/media/'
 
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

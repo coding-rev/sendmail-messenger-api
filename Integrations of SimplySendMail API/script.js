@@ -41,9 +41,9 @@ function ssmPOST(){
 	})
 	.then(response => response.json()) 
 	.then(json => console.log(json))
-	.catch((error) => {
-  		console.error('Error:', error);
-	});
+	// .catch((error) => {
+ //  		console.error('Error:', error);
+	// });
 	
 }
 
