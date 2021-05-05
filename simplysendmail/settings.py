@@ -93,14 +93,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'simplysendmail.wsgi.application'
 
 #Email for forget password
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # during development only
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # during development only
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "cridadgh@gmail.com"
-EMAIL_HOST_PASSWORD = "Cridad+1234"
+
 # DEFAULT_FROM_EMAIL = 'SimplySendMail Support Team <noreply@example.com>'
 
 # Database

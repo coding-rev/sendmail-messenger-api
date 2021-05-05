@@ -26,6 +26,7 @@ def index(request):
 
 	elif request.method =="POST":
 		serializer = MailFieldsSerializer(data=request.data)
+		
 
 		if serializer.is_valid():
 			serializer.save()
@@ -48,7 +49,6 @@ def index(request):
 			message 		= form_message
 			email_from 		= settings.EMAIL_HOST_USER
 			recipient_list 	= [recipient_email]
-			
 			send_mail(subject, message, email_from, recipient_list, fail_silently=True)
 			return Response(serializer.data, status=status.HTTP_201_CREATED)
 
